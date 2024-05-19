@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #fae71e;" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-spacing: -10;">
+         <children>
+            <StackPane prefHeight="89.0" prefWidth="400.0">
+               <children>
+                  <HBox prefHeight="72.0" prefWidth="400.0">
+                     <children>
+                        <StackPane alignment="BOTTOM_CENTER" prefHeight="150.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label text="Energia">
+                                 <font>
+                                    <Font name="Koulen Regular" size="36.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </StackPane>
+                        <StackPane prefHeight="150.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <ImageView fitHeight="72.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Downloads/flag.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </HBox>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="10.0" prefWidth="400.0">
+               <children>
+                  <Line endX="331.29290771484375" endY="1.2926470041275024" startX="-100.0" />
+               </children>
+            </StackPane>
+            <HBox prefHeight="42.0" prefWidth="400.0">
+               <children>
+                  <StackPane alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="COnsumo de energia (24h/Dia)">
+                           <font>
+                              <Font name="Koulen Regular" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="35.0" />
+                     </padding>
+                  </StackPane>
+                  <StackPane prefHeight="42.0" prefWidth="142.0">
+                     <children>
+                        <Label text="10 kWh/mes">
+                           <font>
+                              <Font name="Koulen Regular" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="109.0" prefHeight="42.0" prefWidth="400.0">
+               <children>
+                  <StackPane alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label prefHeight="35.0" prefWidth="190.0" text="Factor De Energia (Ar)">
+                           <font>
+                              <Font name="Koulen Regular" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="35.0" />
+                     </padding>
+                  </StackPane>
+                  <StackPane prefHeight="42.0" prefWidth="160.0">
+                     <children>
+                        <Label text="56,1  (%)">
+                           <font>
+                              <Font name="Koulen Regular" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
+               </children>
+            </HBox>
+            <StackPane prefHeight="33.0" prefWidth="400.0">
+               <children>
+                  <VBox prefHeight="185.0" prefWidth="400.0" style="-fx-spacing: -8;">
+                     <children>
+                        <StackPane prefHeight="44.0" prefWidth="400.0">
+                           <children>
+                              <Label text="El consumo de energia dependera del lugar de">
+                                 <font>
+                                    <Font name="Koulen Regular" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </StackPane>
+                        <StackPane layoutX="10.0" layoutY="10.0" prefHeight="44.0" prefWidth="400.0">
+                           <children>
+                              <Label text="instalacion, modo de uso y mantenimiento del equipo.">
+                                 <font>
+                                    <Font name="Koulen Regular" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </StackPane>
+                     </children>
+                     <padding>
+                        <Insets top="8.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </StackPane>
+            <StackPane layoutX="10.0" layoutY="89.0" prefHeight="10.0" prefWidth="400.0">
+               <children>
+                  <Line endX="339.5" startX="-100.0" />
+               </children>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </StackPane>
+            <StackPane prefHeight="89.0" prefWidth="400.0">
+               <children>
+                  <VBox prefHeight="79.0" prefWidth="400.0" style="-fx-spacing: -25;">
+                     <children>
+                        <StackPane prefHeight="33.0" prefWidth="400.0">
+                           <children>
+                              <Label text="Refrigerador">
+                                 <font>
+                                    <Font name="Koulen Regular" size="19.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </StackPane>
+                        <StackPane layoutX="10.0" layoutY="10.0" prefHeight="52.0" prefWidth="400.0">
+                           <children>
+                              <HBox prefHeight="42.0" prefWidth="400.0">
+                                 <children>
+                                    <StackPane alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label text="Marca">
+                                             <font>
+                                                <Font name="Koulen Regular" size="19.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <padding>
+                                          <Insets left="35.0" />
+                                       </padding>
+                                    </StackPane>
+                                    <StackPane alignment="TOP_RIGHT" prefHeight="42.0" prefWidth="142.0">
+                                       <children>
+                                          <Label text="HAceb">
+                                             <font>
+                                                <Font name="Koulen Regular" size="19.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <padding>
+                                          <Insets right="35.0" />
+                                       </padding>
+                                    </StackPane>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </StackPane>
+                        <StackPane layoutX="10.0" layoutY="43.0" prefHeight="52.0" prefWidth="400.0">
+                           <children>
+                              <HBox prefHeight="42.0" prefWidth="400.0">
+                                 <children>
+                                    <StackPane alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Label text="Marca">
+                                             <font>
+                                                <Font name="Koulen Regular" size="19.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <padding>
+                                          <Insets left="35.0" />
+                                       </padding>
+                                    </StackPane>
+                                    <StackPane alignment="TOP_RIGHT" prefHeight="42.0" prefWidth="142.0">
+                                       <children>
+                                          <Label text="h6162nt29">
+                                             <font>
+                                                <Font name="Koulen Regular" size="19.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <padding>
+                                          <Insets right="35.0" />
+                                       </padding>
+                                    </StackPane>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </StackPane>
+                     </children>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="10.0" prefWidth="400.0">
+               <children>
+                  <Line endX="320.5" startX="-100.0" />
+               </children>
+            </StackPane>
+            <VBox prefHeight="58.0" prefWidth="400.0" style="-fx-spacing: -8;">
+               <children>
+                  <StackPane prefHeight="44.0" prefWidth="400.0">
+                     <children>
+                        <Label text="COmpare este equipo con otros de">
+                           <font>
+                              <Font name="Koulen Regular" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane layoutX="10.0" layoutY="10.0" prefHeight="44.0" prefWidth="400.0">
+                     <children>
+                        <Label text="similires caracteristicas">
+                           <font>
+                              <Font name="Koulen Regular" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
+               </children>
+               <padding>
+                  <Insets top="8.0" />
+               </padding>
+            </VBox>
+            <StackPane prefHeight="183.0" prefWidth="400.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+                     <children>
+                        <StackPane prefHeight="150.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <VBox prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <StackPane alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="238.0">
+                                       <children>
+                                          <Label text="Menor Consumo">
+                                             <font>
+                                                <Font name="Koulen Regular" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                    </StackPane>
+                                    <StackPane prefHeight="150.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <ImageView fitHeight="165.0" fitWidth="230.0" pickOnBounds="true" preserveRatio="true" />
+                                       </children>
+                                    </StackPane>
+                                    <StackPane alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="238.0">
+                                       <children>
+                                          <Label text="Mayor consumo">
+                                             <font>
+                                                <Font name="Koulen Regular" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                    </StackPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </StackPane>
+                        <StackPane prefHeight="225.0" prefWidth="12.0">
+                           <children>
+                              <Line endX="-100.41421508789062" endY="183.2928924560547" startX="-100.41438293457031" startY="-26.778179168701172" />
+                           </children>
+                        </StackPane>
+                        <StackPane prefHeight="150.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Array de la info">
+                                 <font>
+                                    <Font name="Koulen Regular" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="25.0" right="25.0" top="10.0" />
+               </padding>
+            </StackPane>
+            <VBox prefHeight="41.0" prefWidth="400.0" style="-fx-spacing: -8;">
+               <children>
+                  <StackPane prefHeight="44.0" prefWidth="400.0">
+                     <children>
+                        <Label text="no retirar esta etiqueta hasta que se venda el equpo al">
+                           <font>
+                              <Font name="Koulen Regular" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane layoutX="10.0" layoutY="10.0" prefHeight="44.0" prefWidth="400.0">
+                     <children>
+                        <Label text="consumidor final">
+                           <font>
+                              <Font name="Koulen Regular" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
+               </children>
+               <padding>
+                  <Insets top="8.0" />
+               </padding>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</StackPane>
