@@ -1,10 +1,5 @@
 package hellofx;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.event.ActionEvent;
@@ -38,32 +33,7 @@ public class ControladorHome {
   private Label txtTipo;
 
   private Rectangle currentRectangle;
-  
-    @FXML
-    private void initialize() throws ClassNotFoundException {
-        try {
-            Class.forName("org.sqlite.JDBC");
-            
-            Connection conn = DriverManager.getConnection("jdbc:sqlite:chinook.db");
-
-            String sql = "SELECT Title FROM albums WHERE AlbumId = ?";
-            try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                stmt.setInt(1, 2); 
-                try (ResultSet rs = stmt.executeQuery()) {
-                    if (rs.next()) {
-                        String title = rs.getString("title");
-                        txtTipo.setText(title);
-                    } else {
-                        txtTipo.setText("No se encontró el álbum");
-                    }
-                }
-            }
-
-            conn.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
+    
   @FXML
   private void handleBtnLogOutClick(ActionEvent event) {
       try {
