@@ -9,10 +9,10 @@ public class Connect {
     public static void main(String[] args) {
 
 
-        String jdbcUrl = "jdbc:mysql://localhost:3306/test";
-        String user = "devpachita";
-        String password = "Icanwalk.1";
-        
+        String jdbcUrl = "jdbc:mysql://localhost:8080/Electricity_Manager";
+        String user = "root";
+        String password = "";
+
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             try (Connection connection = DriverManager.getConnection(jdbcUrl, user, password)) {

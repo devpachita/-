@@ -18,9 +18,9 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hellofx.ControladorHome">
+<StackPane fx:id="StackFondo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hellofx.ControladorHome">
    <children>
-      <GridPane style="-fx-padding: 10;">
+      <GridPane fx:id="GridFondo" style="-fx-padding: 10;">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -69,7 +69,7 @@
             </StackPane>
             <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-radius: 10; -fx-border-width: 4; -fx-background-color: #000000;" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowIndex="11">
                <children>
-                  <StackPane prefHeight="150.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                  <StackPane onMouseClicked="#mostrarEtiqueta" prefHeight="150.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                      <children>
                         <Label text="DockInfo" textFill="WHITE">
                            <font>
@@ -82,7 +82,7 @@
                      </cursor>
                   </StackPane>
                </children></HBox>
-            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: #000000; -fx-spacing: -20; -fx-border-radius: 10; -fx-border-width: 2; -fx-background-color: #ffffff;" GridPane.columnIndex="8" GridPane.columnSpan="4" GridPane.rowSpan="13">
+            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: #000000; -fx-spacing: -20; -fx-border-radius: 10; -fx-border-width: 2; -fx-background-color: #ffffff; -fx-background-radius: 10;" GridPane.columnIndex="8" GridPane.columnSpan="4" GridPane.rowSpan="13">
                <children>
                   <StackPane prefHeight="65.0" prefWidth="398.0">
                      <children>
@@ -118,7 +118,7 @@
                                           </StackPane>
                                           <StackPane alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="200.0">
                                              <children>
-                                                <Label fx:id="txtTipo" text="Negocio">
+                                                <Label fx:id="txtTipo">
                                                    <font>
                                                       <Font name="JetBrainsMono NF Light Italic" size="18.0" />
                                                    </font>
@@ -147,7 +147,7 @@
                                           </StackPane>
                                           <StackPane alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="200.0">
                                              <children>
-                                                <Label text="3">
+                                                <Label fx:id="txtEstrato">
                                                    <font>
                                                       <Font name="JetBrainsMono NF Light Italic" size="18.0" />
                                                    </font>
@@ -176,7 +176,7 @@
                                           </StackPane>
                                           <StackPane alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="200.0">
                                              <children>
-                                                <Label text="Calle 50 #50-57">
+                                                <Label fx:id="txtDireccion">
                                                    <font>
                                                       <Font name="JetBrainsMono NF Light Italic" size="18.0" />
                                                    </font>
@@ -205,7 +205,7 @@
                                           </StackPane>
                                           <StackPane alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="200.0">
                                              <children>
-                                                <Label text="12">
+                                                <Label fx:id="txtResidentes">
                                                    <font>
                                                       <Font name="JetBrainsMono NF Light Italic" size="18.0" />
                                                    </font>
@@ -298,7 +298,7 @@
                   </StackPane>
                </children>
             </VBox>
-            <AnchorPane fx:id="AnchorLocation" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="8" GridPane.rowIndex="1" GridPane.rowSpan="10">
+            <AnchorPane fx:id="AnchorLocation" onMouseClicked="#mostrarEtiqueta" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="8" GridPane.rowIndex="1" GridPane.rowSpan="10">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="200.0" layoutX="209.0" layoutY="316.0" stroke="BLACK" strokeType="INSIDE" width="80.0" />
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="156.0" layoutX="209.0" layoutY="160.0" stroke="BLACK" strokeType="INSIDE" width="358.0" />

@@ -46,7 +46,7 @@
                <children>
                   <ImageView fitHeight="97.0" fitWidth="104.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/ODS7.jpg" />
+                        <Image url="@../images/ODS7.jpg" />
                      </image>
                   </ImageView>
                </children>
@@ -64,7 +64,7 @@
             <AnchorPane prefHeight="163.0" prefWidth="400.0" VBox.vgrow="ALWAYS" />
             <StackPane prefHeight="92.0" prefWidth="400.0">
                <children>
-                  <TextField fx:id="txtUsuario" prefHeight="24.0" prefWidth="283.0" promptText="Usuario" style="-fx-background-color: D9D9D9;" StackPane.alignment="CENTER">
+                  <TextField fx:id="txtUsuario" onMouseEntered="#onMouseEntered" onMouseExited="#onMouseExited" prefHeight="24.0" prefWidth="283.0" promptText="Usuario" style="-fx-background-color: D9D9D9;" StackPane.alignment="CENTER">
                      <font>
                         <Font name="Koulen Regular" size="20.0" />
                      </font>
@@ -82,7 +82,7 @@
                   <Cursor fx:constant="TEXT" />
                </cursor>
                <children>
-                  <PasswordField fx:id="txtPassword" promptText="Password" style="-fx-background-color: D9D9D9;" StackPane.alignment="CENTER">
+                  <PasswordField fx:id="txtPassword" onMouseEntered="#onMouseEntered" onMouseExited="#onMouseExited" promptText="Password" style="-fx-background-color: D9D9D9;" StackPane.alignment="CENTER">
                      <font>
                         <Font name="Koulen Regular" size="20.0" />
                      </font>
@@ -107,7 +107,16 @@
                   </Button>
                </children>
             </StackPane>
-            <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="163.0" prefWidth="400.0" VBox.vgrow="ALWAYS" />
+            <StackPane prefHeight="62.0" prefWidth="400.0">
+               <children>
+                  <Label onMouseClicked="#mostrarVentanaRegistro" text="Si no tienes cuenta, Crea una aqui" textAlignment="CENTER">
+                     <font>
+                        <Font name="Koulen Regular" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </StackPane>
+            <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="191.0" prefWidth="400.0" />
          </children>
       </VBox>
    </children>
