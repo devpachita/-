@@ -84,22 +84,22 @@
                </children></HBox>
             <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: #000000; -fx-spacing: -20; -fx-border-radius: 10; -fx-border-width: 2; -fx-background-color: #ffffff; -fx-background-radius: 10;" GridPane.columnIndex="8" GridPane.columnSpan="4" GridPane.rowSpan="13">
                <children>
-                  <StackPane prefHeight="65.0" prefWidth="398.0">
-                     <children>
-                        <Label fx:id="labelNombreHouse" text="Pension" StackPane.alignment="CENTER_LEFT">
-                           <font>
-                              <Font name="Koulen Regular" size="32.0" />
-                           </font>
-                        </Label>
-                     </children>
-                     <padding>
-                        <Insets left="20.0" />
-                     </padding>
-                  </StackPane>
                   <StackPane prefHeight="262.0" prefWidth="398.0" style="-fx-padding: 20;">
                      <children>
                         <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-radius: 20; -fx-background-color: #ffffff; -fx-border-color: #000000; -fx-border-radius: 20;">
                            <children>
+                              <StackPane prefHeight="65.0" prefWidth="398.0">
+                                 <children>
+                                    <Label fx:id="labelNombreHouse" text="Pension" StackPane.alignment="CENTER_LEFT">
+                                       <font>
+                                          <Font name="Koulen Regular" size="32.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
+                              </StackPane>
                               <StackPane prefHeight="62.0" prefWidth="354.0" VBox.vgrow="ALWAYS">
                                  <children>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
@@ -243,7 +243,10 @@
                                                             <Insets left="15.0" />
                                                          </padding>
                                                       </StackPane>
-                                                      <StackPane prefHeight="150.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                                                      <StackPane prefHeight="150.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                                         <children>
+                                                            <VBox fx:id="vBoxProductos" prefHeight="200.0" prefWidth="100.0" style="-fx-spacing: -15;" />
+                                                         </children></StackPane>
                                                    </children>
                                                 </VBox>
                                              </children>
@@ -310,6 +313,7 @@
                   <Circle fill="#3b4883" layoutX="352.0" layoutY="238.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
                   <Circle fill="#3b4883" layoutX="425.0" layoutY="238.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
                   <Circle fill="#202124" layoutX="416.0" layoutY="416.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="356.0" layoutX="567.0" layoutY="160.0" stroke="BLACK" strokeType="INSIDE" width="106.0" />
                </children>
             </AnchorPane>
             <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-radius: 10; -fx-border-width: 4; -fx-background-color: #000000;" GridPane.columnSpan="2">

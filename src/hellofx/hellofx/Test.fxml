@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="417.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox prefHeight="74.0" prefWidth="417.0">
+         <children>
+            <StackPane alignment="CENTER_LEFT" prefHeight="150.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="txtTipo" text="txtTIpo">
+                     <font>
+                        <Font name="Koulen Regular" size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: -20;">
+                     <children>
+                        <StackPane prefHeight="74.0" prefWidth="67.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label text="*">
+                                 <font>
+                                    <Font name="JetBrainsMono NF Light Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </StackPane>
+                        <StackPane layoutX="10.0" layoutY="10.0" prefHeight="74.0" prefWidth="103.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label fx:id="txtConsumo" text="txtconsumo">
+                                 <font>
+                                    <Font name="JetBrainsMono NF Light Italic" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </StackPane>
+                        <StackPane layoutX="77.0" layoutY="10.0" prefHeight="74.0" prefWidth="67.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label text="kWh">
+                                 <font>
+                                    <Font name="JetBrainsMono NF Light Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </HBox>
+               </children>
+            </StackPane>
+         </children>
+      </HBox>
+   </children>
+</VBox>

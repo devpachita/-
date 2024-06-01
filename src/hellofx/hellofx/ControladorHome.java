@@ -6,14 +6,20 @@ import javafx.scene.input.MouseEvent;
 import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.layout.HBox;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import java.sql.Connection;
@@ -62,11 +68,14 @@ public class ControladorHome {
   @FXML
   private Label txtResidentes;
 
+  @FXML
+  private VBox vBoxProductos;
+  
   private Rectangle currentRectangle;
     
   public void initialize() throws ClassNotFoundException {
     getThemeFromDatabase();
-    getListProducts();
+    agregarProductos();
   }
 
   public String getThemeFromDatabase() throws ClassNotFoundException {
@@ -74,9 +83,7 @@ public class ControladorHome {
 
         Connection cx = null;
         PreparedStatement consulta = null;
-        PreparedStatement consulta2 = null;
         ResultSet resultado = null;
-        ResultSet resultado2 = null;
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -85,16 +92,13 @@ public class ControladorHome {
             //Agregar logica para la seleccion de estudiante y que casa mostrar dependiendo del usuario
             //String estudiante = utilisatrice
             String consultaSQL = "SELECT tipo, estrato, direccion, residentes FROM Casas WHERE cd_casa = ?";
-            String productos = "SELECT tipo from Productos where id_casa = ?";
 
             consulta = cx.prepareStatement(consultaSQL);
-            consulta.setString(1, "2");
-            consulta2 = cx.prepareStatement(productos);
+            consulta.setString(1, "1");
 
             resultado = consulta.executeQuery();
-            resultado2 = consulta2.executeQuery();
 
-            if (resultado.next() && resultado2.next()) {
+            if (resultado.next()) {
 
                 String tipo = resultado.getString("tipo");
                 String estrato = resultado.getString("estrato");
@@ -158,11 +162,10 @@ public class ControladorHome {
         try {
           Class.forName("com.mysql.cj.jdbc.Driver");
           cx = DriverManager.getConnection("jdbc:mysql://localhost:8080/Electricity_Manager", "root", "");
-          String id_casa = "1";
   
           String consulta = "SELECT * FROM Productos WHERE id_casa = ?";
           prepareStatement = cx.prepareStatement(consulta);
-          prepareStatement.setString(1, id_casa);
+          prepareStatement.setInt(1, 1); //Definir id_casa para saber que datos sacar
   
           resulSet = prepareStatement.executeQuery();
   
@@ -187,6 +190,86 @@ public class ControladorHome {
 
         return productos;
     }
+
+    private void agregarProductos() throws ClassNotFoundException {
+      List<Producto> productos = getListProducts();
+  
+      vBoxProductos.getChildren().clear();
+  
+      if (productos.isEmpty()) {
+          Label mensajeLabel = new Label("No hay productos designados a tu producto aún.");
+          mensajeLabel.setStyle("-fx-font-size: 20px; -fx-font-weight: bold; -fx-font: Koulen;");
+          mensajeLabel.setAlignment(Pos.CENTER);
+          mensajeLabel.setWrapText(true);
+          mensajeLabel.setMaxWidth(300);
+  
+          VBox.setVgrow(mensajeLabel, Priority.ALWAYS);
+          VBox.setMargin(mensajeLabel, new Insets(10));
+  
+          vBoxProductos.getChildren().add(mensajeLabel);
+      } else {
+          for (Producto item : productos) {
+              HBox hbox = new HBox();
+              hbox.setPrefHeight(74.0);
+              hbox.setPrefWidth(417.0);
+  
+              // StackPane for txtTipo
+              StackPane stackPaneTipo = new StackPane();
+              stackPaneTipo.setAlignment(Pos.CENTER_LEFT);
+              stackPaneTipo.setPrefHeight(150.0);
+              stackPaneTipo.setPrefWidth(200.0);
+  
+              Label txtTipo = new Label(item.getTipo());
+              txtTipo.setFont(new Font("Koulen Regular", 22.0));
+              StackPane.setMargin(txtTipo, new Insets(0, 0, 0, 10.0));
+  
+              stackPaneTipo.getChildren().add(txtTipo);
+  
+              // Inner HBox containing two StackPanes
+              HBox innerHBox = new HBox();
+              innerHBox.setPrefHeight(100.0);
+              innerHBox.setPrefWidth(200.0);
+              innerHBox.setStyle("-fx-spacing: -20;");
+  
+              // StackPane for txtConsumo
+              StackPane stackPaneConsumo = new StackPane();
+              stackPaneConsumo.setLayoutX(10.0);
+              stackPaneConsumo.setLayoutY(10.0);
+              stackPaneConsumo.setPrefHeight(74.0);
+              stackPaneConsumo.setPrefWidth(103.0);
+  
+              Label txtConsumo = new Label("450 kWh");
+              txtConsumo.setFont(new Font("JetBrainsMono NF Light Italic", 16.0));
+              stackPaneConsumo.getChildren().add(txtConsumo);
+  
+              // StackPane for "kWh"
+              StackPane stackPanekWh = new StackPane();
+              stackPanekWh.setLayoutX(77.0);
+              stackPanekWh.setLayoutY(10.0);
+              stackPanekWh.setPrefHeight(74.0);
+              stackPanekWh.setPrefWidth(67.0);
+  
+              Label kWhLabel = new Label("kWh");
+              kWhLabel.setFont(new Font("JetBrainsMono NF Light Italic", 18.0));
+              stackPanekWh.getChildren().add(kWhLabel);
+  
+              // Add StackPanes to inner HBox
+              innerHBox.getChildren().addAll(stackPaneConsumo, stackPanekWh);
+  
+              // StackPane to hold inner HBox
+              StackPane outerStackPane = new StackPane();
+              outerStackPane.setPrefHeight(150.0);
+              outerStackPane.setPrefWidth(200.0);
+              outerStackPane.getChildren().add(innerHBox);
+  
+              // Add both StackPanes to the main HBox
+              hbox.getChildren().addAll(stackPaneTipo, outerStackPane);
+  
+              VBox.setVgrow(hbox, Priority.NEVER);
+              vBoxProductos.getChildren().add(hbox);
+          }
+      }
+  }
 
     @FXML
     public void mostrarEtiqueta(MouseEvent event) {

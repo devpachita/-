@@ -39,50 +39,59 @@ public class ControladorEtiqueta {
     public void initialize() throws ClassNotFoundException {
         String model = " H6162NT29"; 
         getDataProduct(model);
+        getInfoProduct();
         printAll();
     }
 
     private void getDataProduct(String modelo) {
-
         Connection cx = null;
         PreparedStatement consulta = null;
         PreparedStatement consulta2 = null;
         ResultSet resultado = null;
         ResultSet resultado2 = null;
-
+    
         try {
-            cx = DriverManager.getConnection("jdbc:mysql://localhost:8080/Electricity_Manager", "root", "");
 
+            // Verifica que estás usando el puerto correcto
+            cx = DriverManager.getConnection("jdbc:mysql://localhost:8080/Electricity_Manager", "root", "");
+    
             String consultaSQL = "SELECT consumo, factor, grado, imagen FROM Casa_Producto WHERE cd_casa = ?";
             String consultaProducto = "SELECT tipo, marca FROM Productos WHERE modelo = ?";
-
+    
             consulta = cx.prepareStatement(consultaSQL);
             consulta.setString(1, "1");
-
+    
             consulta2 = cx.prepareStatement(consultaProducto);
             consulta2.setString(1, modelo);
-
+    
             resultado = consulta.executeQuery();
             resultado2 = consulta2.executeQuery();
-            
+    
             if (resultado.next() && resultado2.next()) {
-
+                // Obtener datos del primer resultado
                 String consumo = resultado.getString("consumo");
                 String factor = resultado.getString("factor");
-                String imagen = resultado.getString("imagen"); 
-                String tipo = resultado2.getString("tipo");
-                String marca = resultado2.getString("marca");
-
+                String imagen = resultado.getString("imagen");
+    
+                // Asignar datos a los labels
                 txtConsumo.setText(consumo + " kWh/mes");
                 txtFactor.setText(factor + " (%)");
-                txtMarca.setText(marca);
                 txtModelo.setText(modelo);
-                txtTipo.setText(tipo);
+    
                 Image gradoImg = new Image(imagen);
                 imgGrado.setImage(gradoImg);
-
+    
+                // Obtener datos del segundo resultado
+                String tipo = resultado2.getString("tipo");
+                String marca = resultado2.getString("marca");
+    
+                // Asignar datos a los labels
+                txtMarca.setText(marca);
+                txtTipo.setText(tipo);
+            } else {
+                System.out.println("No se encontraron resultados para las consultas.");
             }
-
+    
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -97,9 +106,10 @@ public class ControladorEtiqueta {
             }
         }
     }
+    
 
     public class InfoProducto {
-        
+
       // Atributos específicos para lavadoras
       private String capacidadCarga;
       private String capacidadVolumen;
